@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'ls -l main'  // List files inside the "main" folder
+                    // List files inside the "main" folder
                     sh 'g++ -o main/hello_exec main/hello.cpp'  // Compile hello.cpp
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './main/hello_exec'  // Run the compiled program
+                    sh './main/non_existent.cpp'  // Run the compiled program
                 }
             }
         }
